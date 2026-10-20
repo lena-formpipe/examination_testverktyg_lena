@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright
 from pages.base_page import BasePage
 from pages.add_book_page import AddBookPage
+from pages.catalog_page import CatalogPage
 from pages.my_books_page import MyBooksPage
 from pages.statistics_page import StatisticsPage
 
@@ -29,6 +30,7 @@ def before_scenario(context, scenario):
     context.add_book_page = AddBookPage(context.page)
     context.my_books_page = MyBooksPage(context.page)
     context.statistics_page = StatisticsPage(context.page)
+    context.catalog_page = CatalogPage(context.page)
 
 
 # Runs directly after each scenario - clean up to avoid memory leaks
