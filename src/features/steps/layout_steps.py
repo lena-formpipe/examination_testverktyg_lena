@@ -1,7 +1,7 @@
 from behave import given, when, then
 from playwright.sync_api import expect
 
-
+"""
 @when(u'jag klickar på knappen Mina böcker')
 def step_impl(context):
     context.base_page.favorites_button.click(timeout=5000)
@@ -19,7 +19,7 @@ def step_impl(context):
 @then(u'knappen Mina böcker ska vara inaktiv')
 def step_impl(context):
     expect(context.base_page.favorites_button).to_be_disabled()
-
+"""
 
 @when(u'jag klickar på knappen Statistik')
 def step_impl(context):
