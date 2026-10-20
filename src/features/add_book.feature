@@ -20,3 +20,9 @@ Feature: F-004 Lägga till en bok
     When jag lägger till ett författarnamn
     Then knappen Lägg till ny bok ska vara inaktiv
 
+  Scenario: Visa vyn Lägg till bok
+    Given jag surfar till Läslistan
+    When jag klickar på knappen Lägg till bok
+    Then ska information om att lägga till bok visas
+    And knappen Lägg till bok ska vara inaktiv
+

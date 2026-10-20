@@ -45,3 +45,20 @@ def step_impl(context):
     # todo fixa med catalog
     context.added_book_catalog = context.page.get_by_test_id("star-Hunger games")
     expect(context.added_book_catalog).to_be_visible()
+
+
+@when(u'jag klickar på knappen Lägg till bok')
+def step_impl(context):
+    context.base_page.add_book_button.click(timeout=5000)
+
+
+@then(u'ska information om att lägga till bok visas')
+def step_impl(context):
+    expect(context.add_book_page.add_input_title).to_be_visible()
+    expect(context.add_book_page.add_input_author).to_be_visible()
+
+
+@then(u'knappen Lägg till bok ska vara inaktiv')
+def step_impl(context):
+    expect(context.base_page.add_book_button).to_be_disabled()
+
