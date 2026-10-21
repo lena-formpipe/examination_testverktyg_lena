@@ -12,7 +12,7 @@ def before_all(context):
     context.playwright = sync_playwright().start()
     context.browser_type = context.playwright.chromium
     # todo ändra till headless = true innan inlämning
-    context.browser = context.browser_type.launch(headless=False)
+    context.browser = context.browser_type.launch(headless=True)
 
 
 # Runs at the start of each scenario
