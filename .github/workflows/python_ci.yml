@@ -37,6 +37,10 @@ jobs:
         with:
             python-version: "3.14"
 
+      # 2.b Installera Chromium för Playwright
+      - name: Installera Chromium för Playwright
+        run: playwright install chromium
+
       # 3. Installera beroenden typ pytest mm som finns i requirements.txt
       # pip | betyder i princip ny rad
       - name: Installera beroende
