@@ -7,5 +7,6 @@ class BasePage:
         self.catalog_button = page.get_by_test_id("catalog")
 
     def navigate_base_page(self):
-        self.page.goto("https://tap-vt26-testautomatisering.github.io/exam/", timeout=30000)
-
+        self.page.goto(
+            "https://tap-vt26-testautomatisering.github.io/exam/",
+            timeout=30000)

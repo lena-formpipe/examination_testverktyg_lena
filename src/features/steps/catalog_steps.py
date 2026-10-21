@@ -11,9 +11,6 @@ def step_impl(context):
     context.base_page = base_page
     base_page.navigate_base_page()
 
-    # utan page object
-    # context.page.goto(context.base_url, timeout=30000)
-
 
 @then(u'ska information om Katalog visas')
 def step_impl(context):
@@ -23,7 +20,8 @@ def step_impl(context):
         "star-Ormar på ett plan: En Python-berättelse"
     )
     expect(context.first_book_catalog).to_be_visible()
-    expect(context.catalog_page.catalog_class.get_by_text(re.compile("Ormar på ett plan"))).to_be_visible()
+    expect(context.catalog_page.catalog_class.get_by_text(
+        re.compile("Ormar på ett plan"))).to_be_visible()
 
 
 @then(u'knappen Katalog ska vara inaktiv')
@@ -43,5 +41,3 @@ def step_impl(context):
 @then(u'boken "Ormar på ett plan: En Python-berättelse" ska vara favoritmarkerad')
 def step_impl(context):
     expect(context.first_book_button).to_have_class("star selected")
-
-

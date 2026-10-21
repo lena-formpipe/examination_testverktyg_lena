@@ -12,14 +12,12 @@ class FavoriteBooks:
     def __init__(self):
         self._favorite_books = []
 
-
     def add(self, book):
         # när favorit markeras anropas add
         # kontroll att inte lägga till en bok som redan finns
         if book not in self._favorite_books:
             self._favorite_books.append(book)
         return
-
 
     def remove(self, book):
         # när favorit avmarkeras anropas remove

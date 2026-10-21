@@ -4,3 +4,4 @@ playwright
 pytest-playwright
 behave
 flake8
+pre-commit

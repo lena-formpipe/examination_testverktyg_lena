@@ -1,5 +1,3 @@
-# reguljära uttryck == regex
-import re
 import pytest
 from src.fav_books import FavoriteBooks
 from src.book_store import BookStore
@@ -83,5 +81,3 @@ def favorite_book_list_two_books(favorite_book_list_empty, book1, book2):
     favorite_book_list.add(titel1)
     favorite_book_list.add(titel2)
     return favorite_book_list, titel1, titel2
-
-

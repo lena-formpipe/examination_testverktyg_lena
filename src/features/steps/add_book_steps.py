@@ -61,4 +61,3 @@ def step_impl(context):
 @then(u'knappen Lägg till bok ska vara inaktiv')
 def step_impl(context):
     expect(context.base_page.add_book_button).to_be_disabled()
-

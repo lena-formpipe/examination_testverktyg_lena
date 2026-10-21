@@ -1,5 +1,6 @@
-from behave import given, when, then
+from behave import when, then
 from playwright.sync_api import expect
+
 
 @when(u'jag klickar på knappen Mina böcker')
 def step_impl(context):

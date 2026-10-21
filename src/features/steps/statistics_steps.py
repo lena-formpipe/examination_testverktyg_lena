@@ -2,6 +2,7 @@ import re
 from behave import when, then
 from playwright.sync_api import expect
 
+
 @when(u'jag klickar på knappen statistik')
 def step_impl(context):
     context.base_page.statistics_button.click(timeout=5000)

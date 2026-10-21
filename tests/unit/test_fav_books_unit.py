@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.unit
 def test_add__add_favorite(favorite_book_list_empty, book1, book2):
     # arrange
     favorite_book_list = favorite_book_list_empty
@@ -14,6 +18,7 @@ def test_add__add_favorite(favorite_book_list_empty, book1, book2):
     assert expected_list == actual_list
 
 
+@pytest.mark.unit
 def test_remove__remove_favorite(favorite_book_list_two_books):
     # arrange
     # ta bort book2

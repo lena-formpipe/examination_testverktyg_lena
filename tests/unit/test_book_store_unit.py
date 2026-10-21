@@ -2,6 +2,10 @@
 # Som en användare vill jag
 # kunna lägga till en bok i katalogen
 # så att katalogen över böcker kan kompletteras med fler böcker.
+import pytest
+
+
+@pytest.mark.unit
 def test_add_book(bookstore_empty, book1):
     # arrange
     bookstore = bookstore_empty
@@ -24,6 +28,7 @@ def test_add_book(bookstore_empty, book1):
 # kunna favoritmarkera en enskild bok i katalogen
 # så att jag enkelt ser vilka böcker som intresserar mig.
 # Unittest eftersom mock används
+@pytest.mark.unit
 def test_toggle_favorite__mock_favorite_true(bookstore_one_book_with_mocker_favorite):
     # arrange
     bookstore, favorites = bookstore_one_book_with_mocker_favorite
@@ -49,6 +54,7 @@ def test_toggle_favorite__mock_favorite_true(bookstore_one_book_with_mocker_favo
 # kunna avmarkera en bok som favorit i katalogen
 # så att jag kan ta bort böcker när mitt intresse förändras.
 # Unittest eftersom mock används
+@pytest.mark.unit
 def test_toggle_favorite__mock_favorite_false(bookstore_one_book_with_mocker_favorite):
     # arrange
     bookstore, favorites = bookstore_one_book_with_mocker_favorite
@@ -68,4 +74,3 @@ def test_toggle_favorite__mock_favorite_false(bookstore_one_book_with_mocker_fav
     assert favorites.remove.call_count == 1
     favorites.add.assert_called_with(book["title"])
     favorites.remove.assert_called_with(book["title"])
-

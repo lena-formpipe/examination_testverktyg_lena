@@ -10,15 +10,20 @@ from src.fav_books import FavoriteBooks
 #   a.	addBook(author, title)
 #   b.	toggleFavorite(book_id)
 
+# todo Returnera book_id från add_book.
+#  todo Då slipper testerna gissa att första boken har id 1.
+# todo ändra till id, inte titel, i favoritlistan.
+# todo Två böcker med samma titel (t.ex. olika utgåvor) skulle krocka.
+#  Då avmarkerar du fel bok eller får bara en post.
+
 
 class BookStore:
     # favorites gör det möjligt att mocka kopplingen till FavoriteBooks
     # genom dependency injection
-    def __init__(self, favorites = None):
+    def __init__(self, favorites=None):
         self._catalog = []
         self._my_books = favorites if favorites is not None else FavoriteBooks()
         self._next_book_id = 1
-
 
     # ny bok läggs till med favorite = false
     def add_book(self, author: str, title: str, favorite: bool = False):
@@ -30,11 +35,6 @@ class BookStore:
         self._next_book_id += 1
         return
 
-    # todo Returnera book_id från add_book.
-    #  todo Då slipper testerna gissa att första boken har id 1.
-    # todo ändra till id, inte titel, i favoritlistan.
-    # todo Två böcker med samma titel (t.ex. olika utgåvor) skulle krocka.
-    #  Då avmarkerar du fel bok eller får bara en post.
     def toggle_favorite(self, book_id):
         for book in self._catalog:
             # kontrollera att bok finns med detta id
@@ -51,13 +51,11 @@ class BookStore:
                 return book["favourite"]
         return None
 
-
     # todo kan tas bort?
     def get_book_by_index(self, index):
         if 0 <= index < len(self._catalog):
             return self._catalog[index]
         return None
-
 
     # todo kan tas bort?
     def get_book_by_title(self, title):
@@ -65,7 +63,6 @@ class BookStore:
             if book["title"] == title:
                 return book
         return None
-
 
     def get_list_of_my_books(self):
         favorites = self._my_books
