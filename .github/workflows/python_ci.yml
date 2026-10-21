@@ -39,7 +39,7 @@ jobs:
 
       # 2.b Installera Chromium för Playwright
       - name: Installera Chromium för Playwright
-        run: playwright install chromium
+        run: python -m playwright install --with-deps chromium
 
       # 3. Installera beroenden typ pytest mm som finns i requirements.txt
       # pip | betyder i princip ny rad
