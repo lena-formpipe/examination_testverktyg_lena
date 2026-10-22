@@ -11,7 +11,6 @@ def before_all(context):
     # Start Playwright and the browser - close it in after_all
     context.playwright = sync_playwright().start()
     context.browser_type = context.playwright.chromium
-    # todo ändra till headless = true innan inlämning
     context.browser = context.browser_type.launch(headless=True)
 
 
