@@ -1,10 +1,15 @@
+import pytest
+
+
 # US04:
 # Som en användare vill jag
 # kunna lägga till en bok i katalogen
 # så att katalogen över böcker kan kompletteras med fler böcker.
-import pytest
-
-
+#
+# US01:
+# Som en användare vill jag
+# kunna se en katalog med en lista över böcker
+# så att jag vet vilka böcker jag kan välja från
 @pytest.mark.unit
 def test_add_book(bookstore_empty, book1):
     # arrange
@@ -14,13 +19,18 @@ def test_add_book(bookstore_empty, book1):
     expected_book1 = {
         "book_id": book1_id, "author": author1, "title": titel1, "favourite": False
     }
+    expected_catalog = [expected_book1]
 
     # act
     bookstore.add_book(author1, titel1)
     actual_book1 = bookstore.get_book_by_title(titel1)
+    catalog = bookstore.get_list_of_catalog()
+    print(catalog)
+    print(expected_catalog)
 
     # assert
     assert expected_book1 == actual_book1
+    assert expected_catalog == catalog
 
 
 # US02

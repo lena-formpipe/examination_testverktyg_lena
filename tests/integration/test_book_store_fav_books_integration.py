@@ -1,3 +1,6 @@
+import pytest
+
+
 # Testet klassificeras som ett integrationstest eftersom
 # det testar samspelet mellan klasserna BookStore och FavoriteBooks.
 # När toggle_favorite() anropas ändrar BookStore bokens favoritstatus
@@ -9,9 +12,6 @@
 # Som en användare vill jag
 # kunna favoritmarkera en enskild bok i katalogen
 # så att jag enkelt ser vilka böcker som intresserar mig.
-import pytest
-
-
 @pytest.mark.integration
 def test_toggle_favorite__true(bookstore_one_book):
     # arrange
@@ -35,8 +35,6 @@ def test_toggle_favorite__true(bookstore_one_book):
 # Som en användare vill jag
 # kunna avmarkera en bok som favorit i katalogen
 # så att jag kan ta bort böcker när mitt intresse förändras.
-
-
 @pytest.mark.integration
 def test_toggle_favorite__false(bookstore_one_book):
     # arrange

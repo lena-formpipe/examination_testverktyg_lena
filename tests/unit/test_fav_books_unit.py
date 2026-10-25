@@ -1,6 +1,14 @@
 import pytest
 
 
+# US02
+# Som en användare vill jag
+# kunna favoritmarkera en enskild bok i katalogen
+# så att jag enkelt ser vilka böcker som intresserar mig
+#
+# Som en användare vill jag
+# se en lista över enbart mina favoritmarkerade böcker
+# så att jag ser de böcker som intresserar mig
 @pytest.mark.unit
 def test_add__add_favorite(favorite_book_list_empty, book1, book2):
     # arrange
@@ -18,6 +26,10 @@ def test_add__add_favorite(favorite_book_list_empty, book1, book2):
     assert expected_list == actual_list
 
 
+# US03
+# Som en användare vill jag
+# kunna favoritmarkera en enskild bok i katalogen
+# så att jag enkelt ser vilka böcker som intresserar mig
 @pytest.mark.unit
 def test_remove__remove_favorite(favorite_book_list_two_books):
     # arrange
