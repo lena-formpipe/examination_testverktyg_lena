@@ -16,40 +16,11 @@ def book2():
     author2 = "Anna Anka"
     return titel2, author2
 
-"""
-@pytest.fixture
-def bookstore():
-    bookstore = BookStore()
-    favorites = bookstore.get_list_of_my_books()
-    return bookstore, favorites
-"""
 
 @pytest.fixture
 def bookstore_empty():
     return BookStore()
 
-"""
-@pytest.fixture
-def bookstore_two_books(bookstore_empty, book1, book2):
-    bookstore = bookstore_empty
-    titel1, author1 = book1
-    titel2, author2 = book2
-    bookstore.add_book(author1, titel1)
-    bookstore.add_book(author2, titel2)
-    return bookstore, titel1, titel2
-"""
-
-"""
-@pytest.fixture
-def bookstore_two_books_with_mocker_favorite_books(mocker, book1, book2):
-    favorites = mocker.Mock(spec=FavoriteBooks)
-    bookstore = BookStore(favorites)
-    titel1, author1 = book1
-    titel2, author2 = book2
-    bookstore.add_book(author1, titel1)
-    bookstore.add_book(author2, titel2)
-    return bookstore, favorites
-"""
 
 @pytest.fixture
 def bookstore_one_book_with_mocker_favorite(mocker, book1):
