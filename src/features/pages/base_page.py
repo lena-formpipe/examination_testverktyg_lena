@@ -1,4 +1,5 @@
 class BasePage:
+
     def __init__(self, page):
         self.page = page
         self.favorites_button = page.get_by_test_id("favorites")
@@ -7,6 +8,10 @@ class BasePage:
         self.catalog_button = page.get_by_test_id("catalog")
 
     def navigate_base_page(self):
-        self.page.goto(
-            "https://tap-vt26-testautomatisering.github.io/exam/",
-            timeout=30000)
+        self.page.goto("https://tap-vt26-testautomatisering.github.io/exam/", timeout=5000)
+
+    def star_button(self, book_title: str):
+        return self.page.get_by_test_id(f"star-{book_title}")
+
+    def favorite_book(self, book_title: str):
+        self.star_button(book_title).click(timeout=5000)
