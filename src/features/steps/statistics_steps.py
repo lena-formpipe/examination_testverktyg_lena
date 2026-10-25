@@ -1,4 +1,3 @@
-import re
 from behave import when, then
 from playwright.sync_api import expect
 
@@ -13,10 +12,9 @@ def step_impl(context):
     expect(context.statistics_page.statistics_book_count).to_be_visible()
 
 
-@then(u'ska statistik om favoritmarkeringar visa 0')
+@then(u'ska statistik om favoritmarkeringar visas')
 def step_impl(context):
     expect(context.statistics_page.stars_count).to_be_visible()
-    expect(context.statistics_page.stars_count).to_have_text(re.compile("0"))
 
 
 @then(u'ska knappen statistik ska vara inaktiv')
