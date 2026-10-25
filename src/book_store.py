@@ -10,12 +10,6 @@ from src.fav_books import FavoriteBooks
 #   a.	addBook(author, title)
 #   b.	toggleFavorite(book_id)
 
-# todo Returnera book_id från add_book.
-#  todo Då slipper testerna gissa att första boken har id 1.
-# todo ändra till id, inte titel, i favoritlistan.
-# todo Två böcker med samma titel (t.ex. olika utgåvor) skulle krocka.
-#  Då avmarkerar du fel bok eller får bara en post.
-
 
 class BookStore:
     # favorites gör det möjligt att mocka kopplingen till FavoriteBooks
@@ -35,9 +29,11 @@ class BookStore:
         self._next_book_id += 1
         return
 
+    # toggle_favorite ska enligt uppgiften utgå från book_id
     def toggle_favorite(self, book_id):
         for book in self._catalog:
             # kontrollera att bok finns med detta id
+            # ta i så fall fram dess titel
             if book["book_id"] == book_id:
                 book_title = book["title"]
                 # om favorite är True, ändra till False
@@ -51,13 +47,7 @@ class BookStore:
                 return book["favourite"]
         return None
 
-    # todo kan tas bort?
-    def get_book_by_index(self, index):
-        if 0 <= index < len(self._catalog):
-            return self._catalog[index]
-        return None
-
-    # todo kan tas bort?
+    # Hittar en bok via dess titel
     def get_book_by_title(self, title):
         for book in self._catalog:
             if book["title"] == title:
@@ -67,3 +57,7 @@ class BookStore:
     def get_list_of_my_books(self):
         favorites = self._my_books
         return favorites
+
+    def get_list_of_catalog(self):
+        catalog = self._catalog
+        return catalog
