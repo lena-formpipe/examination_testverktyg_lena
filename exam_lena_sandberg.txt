@@ -1,0 +1,5 @@
+Använd PyCharm eller VS Code för att skapa en textfil med namnet "exam_mitt_namn.txt" som innehåller länk till ditt projekt på GitHub.
+(Om du kompletterar ska filen heta "komplettering_mitt_namn.txt".)
+Denna textfil ska du lämna in på Teams.
+
+https://github.com/lena-formpipe/examination_testverktyg_lena

@@ -53,11 +53,11 @@ class BookStore:
             if book["title"] == title:
                 return book
         return None
-
+    """
     def get_list_of_my_books(self):
         favorites = self._my_books
         return favorites
-
+    """
     def get_list_of_catalog(self):
         catalog = self._catalog
         return catalog

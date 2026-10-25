@@ -1,42 +1,47 @@
 # Examination Testverktyg NBI
 
-Skriv ner i README.md: 
-1) vad du har testat, och 
-2) hur man startar projektet. 
+Denna inlämning siktar på betyg G. Jag har även använt Page Objekt.
 
-Nu kan du lämna in:    
-Använd PyCharm eller VS Code för att skapa en textfil med namnet "exam_mitt_namn.txt" som innehåller länk till ditt projekt på GitHub. (Om du kompletterar ska filen heta "komplettering_mitt_namn.txt".) Denna textfil ska du lämna in på Teams. Kom ihåg att göra ditt projekt publikt. Skriv gärna om du har arbetat med bara G-krav eller även VG-kraven.
+## Vad som testas
+För filen fav_book.py unit-testas metoderna
+- add(book)
+- remove(book)
 
-Tips  
-Flera element på sidan har ett test-id som du kan använda med Playwright.  
-Använd headless när du kommit en bit och när du lämnar in uppgiften.  
-Kom ihåg att testa navigeringen också, inte bara innehållet i vyerna.  
-Rekommenderad mappstruktur för projektet (se även senaste kodexemplet, här)  
+För filen book_store.py unit-testas metoderna
+- add_book(book)
+- toggle_favorite(book) - både till True och till False
 
-## Att köra filen
-Skriv pytest
+Integration mellan objekten testas med avseende på toggle True och False.
 
+Med Playwright testas angivna user stories enligt filen STORIES.md där features-filer tagits fram utifrån dessa. 
 
+## Att köra projektet
+Jag kör mina tester från projektets root "examination_testverktyg_lena", då räcker det att skriva
+- pytest
+- behave
+- flake8
 
-## KOM IHÅG: KÖRAS HEADLESS VID INLÄMNINGEN
-Skriv pytest
-används biblioteket workflows - siktar du på VG?
-används filen .pre-commit-config.yaml för att testa innan github?
-används filen python_ci.yml?
-kontrollera markers i pytest.ini!
-GÖR SNYGGARE LAYOUT FÖR MD-filen!!
-kontrollera behave.ini - innehåll i den?
+## CI
+I biblioteket workflows körs vid CI:
+- unittester
+- integrationstester
+- flake8-tester
+- playwright-tester
 
-## För G krävs
+## Lokala tester
+Lokalt kör jag pytest och behave vid commit, enligt filen .pre-commit-config.yaml.
+
+## Angivna kriterier enligt examen
+För G krävs<br>
 A.	Det finns enhetstester och integrationstester för BookStore och FavoriteBooks.  
 B.	Det finns user stories som täcker all funktionalitet i vyerna Katalog, Lägg till bok samt Mina böcker.  
-C.	Alla user stories har minst en feature. Alla features har minst ett scenario. Alla steg implementeras i någon step-fil. (betyder att ingen user story ska vara UTAN feature, men det kan vara så att en feature täcker in två user stories)  
+C.	Alla user stories har minst en feature. Alla features har minst ett scenario. Alla steg implementeras i någon step-fil. 
 D.	Det går att starta ditt projekt, med hjälp av instruktionerna du har skrivit i README.md.  
 E.	Alla test är gröna.  
 
-## För VG krävs
+För VG krävs<br>
 F.	Högre kvalitet och kod som återanvänds.  
-G.	User stories som täcker in vyn Statistik.  
+G.	User stories som täcker in vyn statistik.  
 H.	Du använder designmönstret Page Object.  
 I.	Du använder Scenario Outline.  
 J.	Dina features försöker täcka alla meningsfulla möjligheter för motsvarande user story.
